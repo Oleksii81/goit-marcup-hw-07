@@ -42,6 +42,8 @@ img {
 @media screen and (min-width: 1200px) {
     .container {
         max-width: 1158px;
+        padding-left: 15px;
+            padding-right: 15px;
     }
 }
 @media screen and (max-width: 767px) {
@@ -108,17 +110,19 @@ img {
         }
         .address-link {
             color: var(--text-color);
-            font-size: 16px;
-            line-height: 1.5;
-            letter-spacing: 0.02em;
+            font-weight: 400;
+                font-size: 12px;
+                line-height: 1.17;
+                letter-spacing: 0.04em;
     
             transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
         }
         .address-link:active {
             color: var(--text-color);
-            font-size: 16px;
-            line-height: 1.5;
-            letter-spacing: 0.02em;
+            font-weight: 400;
+                font-size: 12px;
+                line-height: 1.17;
+                letter-spacing: 0.04em;
         }
         .address-link:hover,
         .address-link:focus {
@@ -159,6 +163,11 @@ img {
             background-color: var(--nav-color);
         }
 }
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+    .adrs-item:not(:last-child) {
+        margin-bottom: 12px;
+    }
+}
 /*Header-desktop*/
 @media screen and (min-width: 1200px) {
     .address-list {
@@ -166,8 +175,13 @@ img {
         gap: 40px;
         align-items: center;
 }
+        .address-link {
+            color: var(--text-color);
+            font-size: 16px;
+                line-height: 1.5;
+                letter-spacing: 0.02em;
 }
-
+}
 /*mobile-menu*/
 .menu-toggle {
     display: inline-flex;
@@ -268,7 +282,7 @@ img {
 .mobile-contact-list {
     display: flex;
     flex-direction: column-reverse;
-    margin-bottom: 8px;
+    margin-bottom: 40px;
 }
 
 .modal-telephone {
@@ -290,8 +304,10 @@ img {
 }
 
 .mobile-contact-item {
-    margin-bottom: 40px;
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.mobile-tel {
+    margin-bottom: 40px;
 }
 .menu-adrs-link {
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -336,6 +352,10 @@ img {
 .modal-social-list-link:hover,
 .modal-social-list-link:focus {
     background-color: var(--nav-color);
+}
+.page-menu,
+.modal-telephone {
+    color: var(--nav-color);
 }
 
 .hero {
@@ -490,7 +510,7 @@ screen and (min-resolution: 2dppx) and (min-width: 1200px) {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(1);
-    min-width: 408px;
+    min-width: 320px;
     min-height: 576px;
     padding: 72px 24px 24px 24px;
     background: #fcfcfc;
@@ -547,17 +567,17 @@ screen and (min-resolution: 2dppx) and (min-width: 1200px) {
 .form-label {
     display: flex;
     flex-direction: column;
-    width: 360px;
+    width: 100%;
     margin-bottom: 8px;
 }
 .textarea {
     display: flex;
         flex-direction: column;
-        width: 360px;
+        width: 100%;
         margin-bottom: 16px;
 }
 .form-input {
-    width: 360px;
+    width: 100%;
     height: 40px;
     padding: 11px 38px;
     border: 1px solid rgba(46, 47, 66, 0.4);
@@ -576,7 +596,7 @@ screen and (min-resolution: 2dppx) and (min-width: 1200px) {
 }
 .form-input-textarea {
     resize: none;
-    width: 360px;
+    width: 100%;
     padding: 8px 16px;
         height: 120px;
         border: 1px solid rgba(46, 47, 66, 0.4);
@@ -934,8 +954,13 @@ screen and (min-resolution: 2dppx) and (min-width: 1200px) {
 .customers-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 24px;
+    column-gap: 16px;
     row-gap: 72px;
+}
+@media screen and (min-width: 768px) {
+    .customers-list {
+        column-gap: 24px;
+    }
 }
 @media screen and (min-width: 1200px) {
     .customers-list {
@@ -944,7 +969,7 @@ screen and (min-resolution: 2dppx) and (min-width: 1200px) {
     }
 }
 .customers-item {
-    width: calc((100% - 24px) / 2);
+    width: calc((100% - 16px) / 2);
     height: 88px;
 }
 @media screen and (min-width: 768px) {
@@ -1130,7 +1155,7 @@ screen and (min-resolution: 2dppx) and (min-width: 1200px) {
     width: 100%;
     height: 40px;
     padding-left: 16px;
-    margin-bottom: 16px;
+    
     color: #FFFFFF;
     border: 1px solid #FFFFFF;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
@@ -1140,11 +1165,13 @@ screen and (min-resolution: 2dppx) and (min-width: 1200px) {
 @media screen and (min-width: 768px) {
     .email-input {
         width: 264px;
-        margin-bottom: 0;
-        margin-right: 24px;
+        
     }
+        .subscr-label {
+            margin-bottom: 0;
+            margin-right: 24px;
 }
-
+}
 .email-input::placeholder {
     font-weight: 400;
     font-size: 12px;
@@ -1160,7 +1187,8 @@ screen and (min-resolution: 2dppx) and (min-width: 1200px) {
 .btn-send {
     width: 165px;
     height: 40px;
-    /*padding-left: 24px;*/
+    padding-left: 24px;
+    margin-top: 16px;
     margin-left: auto;
     margin-right: auto;
     font-weight: 500;
@@ -1176,6 +1204,11 @@ screen and (min-resolution: 2dppx) and (min-width: 1200px) {
     border: none;
         border-radius: 4px;
         transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+@media screen and (min-width: 768px) {
+    .btn-send {
+        margin-top: 0;
+    }
 }
 .btn-send:hover,
 .btn-send:focus {
